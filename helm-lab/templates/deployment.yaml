@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "helmHook.fullname" . }}
+  name: {{ include "helmhook.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "helmHook.name" . }}
-    helm.sh/chart: {{ include "helmHook.chart" . }}
+    app.kubernetes.io/name: {{ include "helmhook.name" . }}
+    helm.sh/chart: {{ include "helmhook.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "helmHook.name" . }}
+      app.kubernetes.io/name: {{ include "helmhook.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "helmHook.name" . }}
+        app.kubernetes.io/name: {{ include "helmhook.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
