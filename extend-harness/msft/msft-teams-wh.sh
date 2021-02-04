@@ -1,0 +1,3 @@
+WEBHOOK_URL='<Webhook URL>'
+
+curl -H "Content-Type: application/json" -d "{\"title\":\"Harness: ${workflow.name}-${msg}\",\"themeColor\":\"25ADE4\",\"summary\":\"Harness Deployment\",\"sections\":[{\"facts\":[{\"name\":\"Deployment URL\",\"value\":\"${deploymentUrl}\"},{\"name\":\"Service Name\",\"value\":\"${service.name}\"},{\"name\":\"Artifact\",\"value\":\"${artifact.metadata.image}:${artifact.metadata.tag}\"},{\"name\":\"Environment\",\"value\":\"${env.name}\"},{\"name\":\"Workflow\",\"value\":\"${workflow.name}\"},{\"name\":\"Triggered By\",\"value\":\"${deploymentTriggeredBy}\"}]}]}" "${WEBHOOK_URL}"
