@@ -6,11 +6,8 @@ replicaCount: 1
 
 image:
   repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
-
-nameOverride: ""
-fullnameOverride: ""
+  tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP
